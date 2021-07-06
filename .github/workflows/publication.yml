@@ -26,7 +26,8 @@ jobs:
           ~/ppl-run status-report
       - name: "Checkout"
         run: |
-          ~/ppl-run checkout-branch "CHECKOUT FOR NEXUS PUBLICATION" base "$REPO_FOLDER"
+#          ~/ppl-run checkout-branch "CHECKOUT FOR NEXUS PUBLICATION" base "$REPO_FOLDER"
+          ~/ppl-run checkout-branch "CHECKOUT-BASE" base "$REPO_FOLDER" "${{ secrets.ENTANDO_BOT_TOKEN }}"
       - name: "Cache Maven packages"
         uses: actions/cache@v2
         with:
@@ -46,8 +47,3 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      - name: "Add release TAG"
-        run: |
-          ~/ppl-run \
-            checkout-branch "CHECKOUT-BASE" base "$REPO_FOLDER" "${{ secrets.ENTANDO_BOT_TOKEN }}" --AND \
-            release "TAG-RELEASE" prepare-tag-release "$REPO_FOLDER"
