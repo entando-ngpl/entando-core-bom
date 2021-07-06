@@ -26,7 +26,6 @@ jobs:
           ~/ppl-run status-report
       - name: "Checkout"
         run: |
-#          ~/ppl-run checkout-branch "CHECKOUT FOR NEXUS PUBLICATION" base "$REPO_FOLDER"
           ~/ppl-run checkout-branch "CHECKOUT-BASE" base "$REPO_FOLDER" "${{ secrets.ENTANDO_BOT_TOKEN }}"
       - name: "Cache Maven packages"
         uses: actions/cache@v2
