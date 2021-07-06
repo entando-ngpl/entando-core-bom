@@ -2,8 +2,8 @@ name: Release on internal Nexus
 
 on:
   push:
-    tags:
-      - 'p*'
+    branches:
+      - develop
 
 jobs:
   release-nexus:
