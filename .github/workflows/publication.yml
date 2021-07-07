@@ -26,7 +26,10 @@ jobs:
           ~/ppl-run status-report
       - name: "Checkout"
         run: |
-          ~/ppl-run checkout-branch "CHECKOUT-BASE" base "$REPO_FOLDER" "${{ secrets.ENTANDO_BOT_TOKEN }}"
+          ~/ppl-run checkout-branch base \
+              --id "CHECKOUT-BASE" \
+              --lcd "$REPO_FOLDER" \
+              --token "${{ secrets.ENTANDO_BOT_TOKEN }}"
       - name: "Cache Maven packages"
         uses: actions/cache@v2
         with:
@@ -42,7 +45,9 @@ jobs:
           server-password: MAVEN_PASSWORD
       - name: "Publish package"
         run: |
-          ~/ppl-run mvn "PUBLICATION" PUBLISH "$REPO_FOLDER"
+          ~/ppl-run mvn PUBLISH \
+              --id "PUBLICATION" \
+              --lcd "$REPO_FOLDER"
         env:
           MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
