@@ -22,6 +22,11 @@ jobs:
         run: |
           source <(curl -qsL "https://raw.githubusercontent.com/entando/entando-pipelines/${ENTANDO_OPT_USE_PPL_TAG}/macro/install.sh")
           ~/ppl-run \
-            pr-status-report --AND \
-            checkout-branch "CHECKOUT-BASE" base "$REPO_FOLDER" "${{ secrets.ENTANDO_BOT_TOKEN }}" --AND \
-            release "TAG-RELEASE" prepare-tag-release "$REPO_FOLDER"
+            pr-status-report \
+            .. checkout-branch base \
+                --id "CHECKOUT-BASE" \
+                --lcd "$REPO_FOLDER" \
+                --token "${{ secrets.ENTANDO_BOT_TOKEN }}" \
+            .. release prepare-tag-release \
+                --id "TAG-RELEASE" \
+                --lcd "$REPO_FOLDER"
