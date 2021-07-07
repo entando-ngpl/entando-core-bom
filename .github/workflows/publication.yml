@@ -46,9 +46,3 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      - name: "BOM Update"
-        run: |
-          ~/ppl-run bom update-bom \
-            --id "UPDATE-BOM" \
-            --lcd "$REPO_FOLDER" \
-            --token "$ENTANDO_BOT_TOKEN"
