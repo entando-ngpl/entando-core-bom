@@ -4,7 +4,7 @@
     <groupId>org.entando</groupId>
     <artifactId>entando-core-bom</artifactId>
     <packaging>pom</packaging>
-    <version>6.2.257</version>
+    <version>6.2.5</version>
     <name>Entando Core BOM</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -31,7 +31,7 @@
         </repository>
     </repositories>
     <properties>
-        <ng-pipelines-test.version>9.0.0</ng-pipelines-test.version>
+        <ng-pipelines-test.version>7.7.42</ng-pipelines-test.version>
         <entando-engine-86d3e302.version>6.3.20</entando-engine-86d3e302.version>
         <entando-engine.version>6.3.54</entando-engine.version>
         <entando-engine-ngpl.version>0.0.2</entando-engine-ngpl.version>
