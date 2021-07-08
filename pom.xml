@@ -33,7 +33,7 @@
     <properties>
         <ng-pipelines-test.version>9.0.1</ng-pipelines-test.version>
         <entando-engine-86d3e302.version>6.3.20</entando-engine-86d3e302.version>
-        <entando-engine.version>6.3.55</entando-engine.version>
+        <entando-engine.version>7.0.1</entando-engine.version>
         <entando-engine-ngpl.version>0.0.2</entando-engine-ngpl.version>
         <entando-admin-console.version>6.3.5</entando-admin-console.version>
         <entando-portal-ui.version>6.3.5</entando-portal-ui.version>
